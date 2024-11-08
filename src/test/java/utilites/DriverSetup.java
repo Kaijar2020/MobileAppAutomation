@@ -2,9 +2,7 @@ package utilites;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,7 +11,7 @@ public class DriverSetup {
 
     public AndroidDriver driver;
 
-    @BeforeTest
+    @BeforeClass
     public void setup() throws MalformedURLException {
         String url_appium = "http://127.0.0.1:4723";
 
@@ -26,7 +24,7 @@ public class DriverSetup {
         driver = new AndroidDriver(url, desiredCapabilities);
     }
 
-    @AfterTest
+    @AfterClass
     public void close(){
         driver.quit();
     }

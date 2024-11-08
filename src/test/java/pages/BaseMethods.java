@@ -40,4 +40,8 @@ public class BaseMethods extends DriverSetup{
 
         _touch.longPress(longPressOptions).release().perform();
     }
+
+    public void deagDrop(){
+
+    }
 }

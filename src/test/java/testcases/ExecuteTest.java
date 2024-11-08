@@ -39,7 +39,8 @@ public class ExecuteTest extends BaseMethods {
     @Test
     public void drag_and_drop(){
         getElement(_locators.VIEWS).click();
-
+        getElement(_locators.DRAGandDROP).click();
+        deagDrop();
         text_assert(_locators.DROPED_text, "Dropped!");
     }
 }

@@ -4,9 +4,6 @@ import org.testng.annotations.Test;
 import pages.ApiDemosLocators;
 import pages.BaseMethods;
 
-
-
-
 public class ExecuteTest extends BaseMethods {
 
 
@@ -16,7 +13,7 @@ public class ExecuteTest extends BaseMethods {
          _locators = new ApiDemosLocators();
     }
 
-    @Test
+    @Test(priority = 1)
     public void navigate_to_view(){
         //Verify the Views option.
         text_assert(_locators.VIEWS,"Views");
@@ -28,19 +25,38 @@ public class ExecuteTest extends BaseMethods {
         if(getElement(_locators.EXPANDABLE_LIST).isDisplayed()){
             getElement(_locators.EXPANDABLE_LIST).click();
         }
+
         //Select Customer Adapter.
         getElement(_locators.CUSTOM_ADAPTER).click();
+
         //Validate People Names and Long Press on it.
         text_assert(_locators.NAMES, "People Names");
-        //long_press(_locators.NAMES);
-        System.out.println(getElement(_locators.SAMPLE_MENU).isDisplayed());
+
+        //Click on Person Name
+        try {
+            long_Press(_locators.NAMES);
+            text_assert(_locators.SAMPLE_MENU, "Sample menu");
+            //Verified text is visible.
+            getElement(_locators.SAMPLE_MENU).isDisplayed();
+            driver.navigate().back();
+        }
+        catch (Exception e){
+            throw e;
+        }
+
+        //Redirect to the back screen for catching Drag and Drop.
+        driver.navigate().back();
+        driver.navigate().back();
     }
 
-    @Test
+    @Test(priority = 2,dependsOnMethods = "navigate_to_view")
     public void drag_and_drop(){
-        getElement(_locators.VIEWS).click();
+
+        //Click on element.
         getElement(_locators.DRAGandDROP).click();
-        deagDrop();
+
+        //Perform the Drag and Drop operation.
+        DragAndDrop(_locators.DRAG_CIRCLE1, _locators.DRAG_CIRCLE2);
         text_assert(_locators.DROPED_text, "Dropped!");
     }
 }

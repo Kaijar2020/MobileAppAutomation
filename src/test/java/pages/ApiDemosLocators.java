@@ -18,5 +18,4 @@ public class ApiDemosLocators{
     public By DRAG_CIRCLE2 = AppiumBy.id("io.appium.android.apis:id/drag_dot_2");
     public By DROPED_text = AppiumBy.id("io.appium.android.apis:id/drag_result_text");
 
-
 }

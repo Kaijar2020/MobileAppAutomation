@@ -2,17 +2,17 @@
 Mobile app automation using Java, Appium,TestNG
 
 ### Prerequisite to run the project.
- ~~~
- appium 2.0 or higher must installed and server running through 4723 port.
- UiAutomator 2 must installed.
- ~~~
+`appium 2.0 or higher must installed and the server must run through the 4723 port.` <br/>
 
+`UiAutomator 2 must installed.`
 ### The Demo Execution Video.
 https://github.com/user-attachments/assets/8684b3b9-1905-4147-b2da-01fdbd6309c1
 
 ### The Report Generate.
  Run this command after Run the project.
-  ` allure serve`
+  ~~~ 
+  allure serve 
+  ~~~
 
 ### The Test Report.
 ![allure_report](https://github.com/user-attachments/assets/8753c1d3-bebe-4df8-85e3-f875e53b4a91)

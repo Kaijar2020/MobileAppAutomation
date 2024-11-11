@@ -22,8 +22,7 @@ public class BaseMethods extends DriverSetup{
     //To find element
     public WebElement getElement(By locators){
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        WebElement path = driver.findElement(locators);
-        return path;
+        return driver.findElement(locators);
     }
 
     //To assert Text.
@@ -44,7 +43,7 @@ public class BaseMethods extends DriverSetup{
 
     //To Drag and Drop.
     public void DragAndDrop(By target, By destination) {
-        //Covert into web-element.
+        //Convert into web-element.
         WebElement circle1 = getElement(target);
         WebElement circle2 = getElement(destination);
 
@@ -63,7 +62,7 @@ public class BaseMethods extends DriverSetup{
     }
 
     public void long_Press(By locators) {
-        //Covert into web-element.
+        //Convert into web-element.
         WebElement elem = driver.findElement(locators);
 
         Sequence longPress = new Sequence(finger, 1);
